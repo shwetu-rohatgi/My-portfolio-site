@@ -12,18 +12,57 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="animate.css">
-<script scr ="jquery-1.9.1.min.js"></script>
+<script src ="wow.min.js"></script>
+<script src="particles.js-master/particles.js"></script>
 <script>
-$('#container').animateCss('bounce');
+new WOW().init();
+var ypos,image;
+function parallax(){
+  ypos= window.pageYOffset;
+  image=window.getElementByClass('.sect');
+  image.style.top= ypos * .4 +"px";
+};
+window.addEventListner("scroll",parallax);
 </script>
 <style>
+.navigate{
+  position: fixed;
+  width: 100%;
+  background-color: rbga(0,0,0,.5);
+}
+#top{
+    position: fixed;
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    background: #3b454a;
+    bottom: 0px;
+    right: 40px;
+    padding-top: 15px;
+
+}
 li {
     display: inline;
 }
+
+img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+html,body{
+  height: 100%;
+}
 body {
-    background-image: url("mountain.jpg");
+    background-image: url("blur.jpg");
     background-position: center;
     background-attachment: fixed;
+    background-repeat:no-repeat;
+    -moz-background-size: 100%;
+    -moz-border-radius: 20px;
+    -webkit-background-size: 100%;
+    -webkit-border-radius: 20px;
+    background-size: cover;
 }
 #nav1 {
 	display: inline-block;
@@ -32,13 +71,44 @@ body {
     color: #c00;
     text-align:center;
     background-color: #fff;}
+.sect{
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: -1;
+}
+.subsect{
+    height: 50%;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+.sectOne{
+    background-image: url("blur.jpg");
+    background-position: center;    
+}
+.sectTwo{
+    background-image: url("img/7.jpg");
+}
+.sectThree{
+    background-image: url("img/5.jpg");
+}
+/*video{
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+}*/
+
 </style>
 
 </head>
 <body>
+ <div id="particles-js"> 
 <header id ="home">
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+  <div class="container-fluid navigate">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -58,24 +128,43 @@ body {
   </div>
 </nav>
 </header>
+<!--<video autoplay>
+<source src="waterfall2.avi" type="video/avi"/>
 
+</video>-->
+<div class= "sect sectOne">
 <content>
 <div class="container fadeInDown animated">
-<center><img src="my fb dp.jpg" style="position: relative; top:90px; height:300px; width:300px;"></center>	
-<center><h1 style="position: relative; top:110px; color: black;">I'm Shwetanshu Rohatgi</h1></center>
-<center><h3 style="position: relative; top:110px; color: yellow;">I am an aspiring web designer. I have strong front-end skills and now loking forward to shape up my back-end skills as well. I aim to be a top data scientist in future. </h3></center>
+<div class="image"><center><img src="my fb dp.jpg" style="position: relative; top:90px; height:300px; width:300px;"></center></div>	
+<center><h1 style="position: relative; top:110px; color: white; font-family: sans-serif;">I'm Shwetanshu Rohatgi</h1></center>
+<center><h3 style="position: relative; top:110px; color: white; font-family: "PlutoSansThin";">I am an aspiring web designer. I have strong front-end skills and now loking forward to shape up my back-end skills as well. I aim to be a top data scientist in future. </h3></center>
 </div>
 </content>
-<div class="container bounceInUP animated">
+<div class="container wow bounceInUP animated" data-wow-delay="4s">
 <div class="social">
     <center>
-   <li><a href="https://www.facebook.com/shwetanshu.rohatgi"><img src="facebook.png" style="height=100px; width=100px; position: relative; top:130px;"/></a></li>
-   <li><a href="https://in.linkedin.com/in/shwetanshu-rohatgi-4a4728108"><img src="linkedin.png" style="height=100px; width=100px; position: relative; top:130px;"/></a></li>
-   <li><a href="shwetanshu.rohatgi@gmail.com"><img src="google.png" style="height=100px; width=100px; position: relative; top:130px;"/></a></li>
+   <li><a href="https://www.facebook.com/shwetanshu.rohatgi"><img src="facebook.svg" style="height=30%; width=30%; position: relative; top:130px;"/></a></li>
+   <li><a href="https://in.linkedin.com/in/shwetanshu-rohatgi-4a4728108"><img src="linkedin.svg" style="height=30%; width=30%; position: relative; top:130px;"/></a></li>
+   <li><a href="mailto:shwetanshu.rohatgi@gmail.com"><img src="google+.svg" style="height=30%; width=30%; position: relative; top:130px;"/></a></li>
     </center>
 </div>
 </div>
-
+</div>
+<div class="scroll">
+<a id="top" style="position: fixed; bottom: 10px; right:20px display: inline;" href="#"><img height="14" width="9" src="https://dm2013.s3.amazonaws.com/assets/img/top-arrow.png"/></a>
+</div>
+<div class="subsect">
+    <div class="container">
+        <left><h2>Education</h2></left>
+        <p> I am an Undergraduate student currently in 2nd year of my BTech. in Computer Science and Engineerng in Maharaja Surajmal Institute of Technology, Janakpuri (Affiliated to I.P University).</p>
+        <p>I have secured 81.6% in my graduation in 3 semesters and I have an overall 76th rank in IPU.</p>
+        <p>I have secured 93.4% in my CBSE Board Examinations and 95+ in 4 subjects.</p>
+    </div>
+</div>
+<div class="sect sectTwo"></div>
+<div class="subsect"></div>
+<div class="sect sectThree"></div>
+</div>
 </body>
 
 </html>
