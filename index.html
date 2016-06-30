@@ -11,6 +11,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
 <link rel="stylesheet" href="animate.css">
 <script src ="wow.min.js"></script>
 <script src="particles.js-master/particles.js"></script>
@@ -19,12 +21,41 @@ new WOW().init();
 var ypos,image;
 function parallax(){
   ypos= window.pageYOffset;
-  image=window.getElementByClass('.sect');
-  image.style.top= ypos * .4 +"px";
+  image=window.getElementById('a1');
+  image.style.top= ypos * .4 +'px';
 };
 window.addEventListner("scroll",parallax);
+
+$(document).ready(function(){
+  $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash;
+      var $target = $(target);
+
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 900, 'swing', function () {
+          window.location.hash = target;
+      });
+  });
+});
+
+$(document).ready(function(){
+  $(window).scroll(function(){
+    if($(document).scrollTop>350){
+      $('.edu').addClass('ZoomIn animated');
+    }
+    else{
+      $('.edu').removeClass('ZoomIn animated');
+    }
+  });
+});
 </script>
 <style>
+form{
+  display: inline;
+}
 .navigate{
   position: fixed;
   width: 100%;
@@ -41,9 +72,17 @@ window.addEventListner("scroll",parallax);
     padding-top: 15px;
 
 }
-li {
-    display: inline;
+#final{
+  margin-top: 100px;
 }
+
+li {
+    display: inline;    
+}
+
+#pad{
+  padding: 10px;
+} 
 
 img {
     max-width: 70%;
@@ -94,6 +133,16 @@ body {
 .sectThree{
     background-image: url("img/5.jpg");
 }
+#skill{
+  display: inline;
+  position: relative; 
+  top:140px; 
+  font-family: 'PlutoSansThin';
+  font-size: 30px;
+
+}
+
+
 /*video{
   min-height: 100%;
   min-width: 100%;
@@ -119,11 +168,11 @@ body {
     </div>  
     <ul class="nav navbar-nav" id="nav1">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Education</a></li>
-      <li><a href="#">Hobbies</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#a1">Home</a></li>
+      <li><a href="#a2">About</a></li>
+      <li><a href="#a3">Education</a></li>
+      <li><a href="#a4">Hobbies</a></li>
+      <li><a href="#a5">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -132,20 +181,19 @@ body {
 <source src="waterfall2.avi" type="video/avi"/>
 
 </video>-->
-<div class= "sect sectOne">
+<div class= "sect sectOne" id="a1">
 <content>
 <div class="container fadeInDown animated">
 <div class="image"><center><img src="my fb dp.jpg" style="position: relative; top:90px; height:300px; width:300px;"></center></div>	
-<center><h1 style="position: relative; top:110px; color: white; font-family: sans-serif;">I'm Shwetanshu Rohatgi</h1></center>
-<center><h3 style="position: relative; top:110px; color: white; font-family: "PlutoSansThin";">I am an aspiring web designer. I have strong front-end skills and now loking forward to shape up my back-end skills as well. I aim to be a top data scientist in future. </h3></center>
+<center><h1 style="position: relative; top:130px; color: white; font-family: sans-serif;">I'm Shwetanshu Rohatgi</h1></center>
 </div>
 </content>
 <div class="container wow bounceInUP animated" data-wow-delay="4s">
 <div class="social">
     <center>
-   <li><a href="https://www.facebook.com/shwetanshu.rohatgi"><img src="facebook.svg" style="height=30%; width=30%; position: relative; top:130px;"/></a></li>
-   <li><a href="https://in.linkedin.com/in/shwetanshu-rohatgi-4a4728108"><img src="linkedin.svg" style="height=30%; width=30%; position: relative; top:130px;"/></a></li>
-   <li><a href="mailto:shwetanshu.rohatgi@gmail.com"><img src="google+.svg" style="height=30%; width=30%; position: relative; top:130px;"/></a></li>
+   <li><a href="https://www.facebook.com/shwetanshu.rohatgi"><img src="facebook.svg" style="height=30%; width=30%; position: relative; top:150px;"/></a></li>
+   <li><a href="https://in.linkedin.com/in/shwetanshu-rohatgi-4a4728108"><img src="linkedin.svg" style="height=30%; width=30%; position: relative; top:150px;"/></a></li>
+   <li><a href="mailto:shwetanshu.rohatgi@gmail.com"><img src="google+.svg" style="height=30%; width=30%; position: relative; top:150px;"/></a></li>
     </center>
 </div>
 </div>
@@ -153,17 +201,99 @@ body {
 <div class="scroll">
 <a id="top" style="position: fixed; bottom: 10px; right:20px display: inline;" href="#"><img height="14" width="9" src="https://dm2013.s3.amazonaws.com/assets/img/top-arrow.png"/></a>
 </div>
-<div class="subsect">
+<div class="subsect" id="a2">
     <div class="container">
         <left><h2>Education</h2></left>
+        <div class="edu">
         <p> I am an Undergraduate student currently in 2nd year of my BTech. in Computer Science and Engineerng in Maharaja Surajmal Institute of Technology, Janakpuri (Affiliated to I.P University).</p>
         <p>I have secured 81.6% in my graduation in 3 semesters and I have an overall 76th rank in IPU.</p>
         <p>I have secured 93.4% in my CBSE Board Examinations and 95+ in 4 subjects.</p>
     </div>
+  </div>
 </div>
-<div class="sect sectTwo"></div>
-<div class="subsect"></div>
-<div class="sect sectThree"></div>
+<div class="sect sectTwo" id="a3"></div>
+<div class="subsect" id="a4">
+    <center><h3 style="position: relative; top:95px; font-family: PlutoSansThin;">I am an aspiring web designer. I have strong front-end skills and now I am looking forward to shape up my back-end skills as well. I aim to be a top data scientist in future.</h3>
+        <h3 style="position: relative; top:110px; font-family: PlutoSansThin; font-size: 30px">Skills</h3>
+    <ul id="skill">
+      <span>
+      <li id="pad">C</li>
+      <li id="pad">C++</li>
+      <li id="pad">Python</li>
+      <li id="pad">HTML5</li>
+      <li id="pad">CSS3</li>
+      <li id="pad">JavaScript</li>
+      <li id="pad">jQuery</li>
+      <li id="pad">AngularJs</li>
+      <li id="pad">Git</li>
+      <li id="pad">Django</li>
+    </span>
+    </ul> 
+  </center>
+
+</div>
+<div class="sect sectThree" id="a5">
+  <div class="container">
+    <center><h2 style="color: white; font-family: sans-serif; margin-top: 80px;">Contact Me</h2></center>
+    <div id="final">
+  <center>  
+
+      <form id="contact-form" method="post" action="contact.php" role="form">
+
+        <div class="messages"></div>
+
+        <div class="controls">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="form_name" style="color: white;">Firstname *</label>
+                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="form_lastname" style="color: white;">Lastname *</label>
+                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="form_email" style="color: white;">Email *</label>
+                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="form_phone" style="color: white;">Phone</label>
+                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="form_message" style="color: white;">Message *</label>
+                        <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-success btn-send" value="Send message">
+                </div>
+            </div>
+        </div>
+
+    </form>
+</center>
+</div>
+</div>
 </div>
 </body>
 
