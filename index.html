@@ -1,7 +1,7 @@
 <!!DOCTYPE html>
 <head>
 <title>Shwetanshu</title>
-
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -11,13 +11,15 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-
 <link rel="stylesheet" href="animate.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src ="wow.min.js"></script>
 <script src="particles.js-master/particles.js"></script>
+
 <script>
 new WOW().init();
+</script>
+<script>
 var ypos,image;
 function parallax(){
   ypos= window.pageYOffset;
@@ -25,7 +27,8 @@ function parallax(){
   image.style.top= ypos * .4 +'px';
 };
 window.addEventListner("scroll",parallax);
-
+</script>
+<script>
 $(document).ready(function(){
   $('a[href^="#"]').on('click',function (e) {
       e.preventDefault();
@@ -40,7 +43,8 @@ $(document).ready(function(){
       });
   });
 });
-
+</script>
+<script>
 $(document).ready(function(){
   $(window).scroll(function(){
     if($(document).scrollTop>350){
@@ -50,6 +54,17 @@ $(document).ready(function(){
       $('.edu').removeClass('ZoomIn animated');
     }
   });
+});
+</script>
+<script>
+$(".image").mouseenter(function()
+{
+    $(this).fadeOut();
+});
+
+$(".image").mouseleave(function()
+{
+    $(this).fadeIn();
 });
 </script>
 <style>
@@ -75,6 +90,29 @@ form{
 #final{
   margin-top: 100px;
 }
+ul{
+  display: inline;
+}
+.nav-li{
+  margin-top: 10px; 
+  padding: 30px;
+  font-family: monospace;
+  font-size: 25px;
+  padding-top: 10px;
+}
+li a:hover {
+    background-color: #111;
+    text-decoration: none;
+    color: cyan;
+}
+li a {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 
 li {
     display: inline;    
@@ -93,7 +131,6 @@ html,body{
   height: 100%;
 }
 body {
-    background-image: url("blur.jpg");
     background-position: center;
     background-attachment: fixed;
     background-repeat:no-repeat;
@@ -118,7 +155,7 @@ body {
     z-index: -1;
 }
 .subsect{
-    height: 50%;
+    height: 70%;
     background-color: white;
     position: relative;
     z-index: 1;
@@ -128,7 +165,7 @@ body {
     background-position: center;    
 }
 .sectTwo{
-    background-image: url("img/7.jpg");
+    background-image: url("project.jpg");
 }
 .sectThree{
     background-image: url("img/5.jpg");
@@ -142,6 +179,43 @@ body {
 
 }
 
+#nav{
+  width: 100%;
+  height: 40px;
+  background-color: #333;;
+  color: white;
+  z-index: 10;
+}
+
+h1{
+  text-align: center;
+}
+
+.tiles{
+  width: 100%;
+  height: 100%;
+}
+
+.textHover{
+  display: none;
+  text-align: center;
+  padding-top:65px;
+}
+
+.col-md-4:hover .textHover {
+    display:block;
+}
+.col-md-4:hover h1 {
+    display: none;
+}
+
+.proimg{
+  margin-left: 30px;
+  margin-top: 50px;
+  align-content: center;
+  width: 120%;
+  height: 120%;
+}
 
 /*video{
   min-height: 100%;
@@ -151,11 +225,17 @@ body {
 }*/
 
 </style>
+<script>
+  $(".col-md-4").hover(function(){
+    $("h1").hide();
+});
+
+</script>
 
 </head>
 <body>
- <div id="particles-js"> 
-<header id ="home">
+ 
+<!--<header id ="home">
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid navigate">
     <div class="navbar-header">
@@ -176,63 +256,151 @@ body {
     </ul>
   </div>
 </nav>
-</header>
+</header>-->
 <!--<video autoplay>
 <source src="waterfall2.avi" type="video/avi"/>
 
 </video>-->
-<div class= "sect sectOne" id="a1">
+<div id="nav">
+  <center>
+<ul>
+<li class="nav-li"><a href="#a1">Home</a></li>
+<li class="nav-li"><a href="#a2">Education</a></li>
+<li class="nav-li"><a href="#a3">Projects</a></li>
+<li class="nav-li"><a href="#a4">Skills</a></li>
+<li class="nav-li"><a href="#a5">Contact</a></li>
+<ul>
+</center>
+</div>
+<div class= "sect sectOne" id="a1" data-stellar-background-ratio="0.5">
 <content>
 <div class="container fadeInDown animated">
-<div class="image"><center><img src="my fb dp.jpg" style="position: relative; top:90px; height:300px; width:300px;"></center></div>	
-<center><h1 style="position: relative; top:130px; color: white; font-family: sans-serif;">I'm Shwetanshu Rohatgi</h1></center>
+  <div class="hovering">
+<div class="image"><center><img src="profile.jfif" style="border-color: white; border-width: 10px;
+    border-style: solid; position: relative; top:90px; height:300px; width:300px; border-radius: 50%"></center></div>	</div>
+<center><h1 style="position: relative; top:130px; color: white; font-family: Lobster; font-size: 40px;">I'm Shwetanshu Rohatgi</h1></center>
 </div>
 </content>
-<div class="container wow bounceInUP animated" data-wow-delay="4s">
+<div class="container wow bounceInUP animated" data-wow-delay="2s">
 <div class="social">
     <center>
-   <li><a href="https://www.facebook.com/shwetanshu.rohatgi"><img src="facebook.svg" style="height=30%; width=30%; position: relative; top:150px;"/></a></li>
-   <li><a href="https://in.linkedin.com/in/shwetanshu-rohatgi-4a4728108"><img src="linkedin.svg" style="height=30%; width=30%; position: relative; top:150px;"/></a></li>
-   <li><a href="mailto:shwetanshu.rohatgi@gmail.com"><img src="google+.svg" style="height=30%; width=30%; position: relative; top:150px;"/></a></li>
+   <li><a href="https://www.facebook.com/shwetanshu.rohatgi"><img src="facebook.svg" style="height=30%; width=30%; position: relative; top:175px;"/></a></li>
+   <li><a href="https://in.linkedin.com/in/shwetanshu-rohatgi-4a4728108"><img src="linkedin.svg" style="height=30%; width=30%; position: relative; top:175px;"/></a></li>
+   <li><a href="mailto:shwetanshu.rohatgi@gmail.com"><img src="google+.svg" style="height=30%; width=30%; position: relative; top:175px;"/></a></li>
     </center>
 </div>
 </div>
 </div>
 <div class="scroll">
-<a id="top" style="position: fixed; bottom: 10px; right:20px display: inline;" href="#"><img height="14" width="9" src="https://dm2013.s3.amazonaws.com/assets/img/top-arrow.png"/></a>
+<a id="top" style="position: fixed; bottom: 10px; right:20px display: inline;" href="#nav"><img height="14" width="9" src="https://dm2013.s3.amazonaws.com/assets/img/top-arrow.png"/></a>
 </div>
 <div class="subsect" id="a2">
     <div class="container">
-        <left><h2>Education</h2></left>
+        <center><h2 style=" font-family: Lobster; color: cyan; font-size: 35px;">Education</h2></center>
         <div class="edu">
-        <p> I am an Undergraduate student currently in 2nd year of my BTech. in Computer Science and Engineerng in Maharaja Surajmal Institute of Technology, Janakpuri (Affiliated to I.P University).</p>
-        <p>I have secured 81.6% in my graduation in 3 semesters and I have an overall 76th rank in IPU.</p>
-        <p>I have secured 93.4% in my CBSE Board Examinations and 95+ in 4 subjects.</p>
+          <div class="col-md-12">
+        <div class="col-md-4"><p style="font-family:helvetica; font-size:20px;"> I am an Undergraduate student currently in 2nd year of my BTech. in Computer Science and Engineerng in Maharaja Surajmal Institute of Technology, Janakpuri (Affiliated to I.P University).</p></div>
+
+        <div class="col-md-4"><p style="font-family:helvetica; font-size:20px;">I have secured 81.6% in my graduation in 3 semesters and I have an overall 76th rank in IPU.</p></div>
+
+        <div class="col-md-4"><p style="font-family:helvetica; font-size:20px;">I have secured 93.4% in my CBSE Board Examinations and 95+ in 4 subjects.</p></div>
+          </div>
     </div>
   </div>
 </div>
-<div class="sect sectTwo" id="a3"></div>
+<div class="sect sectTwo" id="a3" data-stellar-background-ratio="0.5">
+  <div class="col-md-12">
+    <h1 style="font-size:40px; font-family: Lobster; color: black; margin-top:10px;"> Projects </h1>
+    <div class="row" style="height:30%;">
+      <div class="col-md-4">
+          <div class="proimg"><a href="www.delimedy.com"><img src="capture2.png"/></a></div>
+      </div>
+      <div class="col-md-4">
+          <div class="proimg"><a href="https://github.com/shwetu-rohatgi"><img src="capture1.png"/></a></div>
+      </div>
+      <div class="col-md-4">
+          <div class="proimg"><a href="www.suitsbyyou.in"><img src="capture3.png"/></a></div>
+      </div>
+    </div>
+    <div class="row" style="height:30%;">
+      <div class="col-md-4">
+          <div class="proimg"><a href="https://github.com/shwetu-rohatgi"><img src="capture5.png"/></a></div>
+      </div>
+      <div class="col-md-4">
+          <div class="proimg"><a href="www.badiyajobs.com"><img src="capture4.png"/></a></div>
+      </div>
+      <div class="col-md-4">
+          <div class="proimg"><a href="#"><img src=""/></a></div>
+      </div>      
+    </div>
+  </div>
+</div>
 <div class="subsect" id="a4">
+  <div class="col-md-6">
     <center><h3 style="position: relative; top:95px; font-family: PlutoSansThin;">I am an aspiring web designer. I have strong front-end skills and now I am looking forward to shape up my back-end skills as well. I aim to be a top data scientist in future.</h3>
-        <h3 style="position: relative; top:110px; font-family: PlutoSansThin; font-size: 30px">Skills</h3>
-    <ul id="skill">
-      <span>
-      <li id="pad">C</li>
-      <li id="pad">C++</li>
-      <li id="pad">Python</li>
-      <li id="pad">HTML5</li>
-      <li id="pad">CSS3</li>
-      <li id="pad">JavaScript</li>
-      <li id="pad">jQuery</li>
-      <li id="pad">AngularJs</li>
-      <li id="pad">Git</li>
-      <li id="pad">Django</li>
-    </span>
-    </ul> 
-  </center>
+        <!--<h3 style="position: relative; top:110px; font-family: PlutoSansThin; font-size: 30px">Skills</h3>
+    </center>-->
+  </div>
+  <div class="col-md-6">
+    <center><h3 style="color: black; padding-top: 20px">Reach Me !</h3></center>
+    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><center><div style='overflow:hidden;height:400px;width:400px; padding-top: 20px'><div id='gmap_canvas' style='height:300px;width:300px;'></div><div><small><a href="http://embedgooglemaps.com"> </a></small></div><div><small><a href="https://termsandcondiitionssample.com"></a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div></center><script type='text/javascript'>function init_map(){var myOptions = {zoom:13,center:new google.maps.LatLng(28.5383607,77.25719950000007),mapTypeId: google.maps.MapTypeId.TERRAIN};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.5383607,77.25719950000007)});infowindow = new google.maps.InfoWindow({content:'<strong>Title</strong><br>Deshbandhu Apartment, Patparganj, Delhi-92<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+  </div>
 
 </div>
-<div class="sect sectThree" id="a5">
+<div class="container">
+  <div class="col-md-12">
+    <center><h2 style="font-family: Lobster; font-size: 50px; color: cyan;">Skills</h2></center>
+  </div>
+</div>
+<div class="tiles">
+  
+  <div class="row">
+    <div class="col-md-4" style="background-color: orange; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">HTML5</h1>
+      <div class="textHover" style="font-size: 70px;">88%</div>
+    </div>
+    <div class="col-md-4" style="background-color: Wheat; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">CSS3</h1>
+      <div class="textHover" style="font-size: 70px;">82%</div>
+    </div>
+    <div class="col-md-4" style="background-color: CornflowerBlue; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">Javascript</h1>
+      <div class="textHover" style="font-size: 70px;">77%</div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4" style="background-color: PowderBlue; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">C / C++</h1>
+      <div class="textHover" style="font-size: 70px;">86%</div>
+    </div>    
+    <div class="col-md-4" style="background-color: yellow; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">AngularJs</h1>
+      <div class="textHover" style="font-size: 70px;">65%</div>
+    </div>
+    <div class="col-md-4" style="background-color: Pink; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">Python</h1>
+      <div class="textHover" style="font-size: 70px;">90%</div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4" style="background-color: LawnGreen; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">Django</h1>
+      <div class="textHover" style="font-size: 70px;">73%</div>
+    </div>    
+    <div class="col-md-4" style="background-color: HotPink; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">PHP</h1>
+      <div class="textHover" style="font-size: 70px;">62%</div>
+    </div>
+    <div class="col-md-4" style="background-color: DarkTurquoise; height: 217px;">
+      <h1 style="font-family: Josefin Slab; padding-top: 70px;">Git</h1>
+      <div class="textHover" style="font-size: 70px;">80%</div>
+    </div>
+  </div>    
+
+</div>
+<div class="sect sectThree" id="a5" data-stellar-background-ratio="0.5">
   <div class="container">
     <center><h2 style="color: white; font-family: sans-serif; margin-top: 80px;">Contact Me</h2></center>
     <div id="final">
@@ -295,6 +463,10 @@ body {
 </div>
 </div>
 </div>
+<script src="jquery.stellar.min.js" ></script>
+<script>
+  $.stellar();
+</script>
 </body>
 
 </html>
